@@ -14,10 +14,12 @@ import GlobalPresence from "./components/GlobalPresence";
 import DreamProject from "./components/DreamProject";
 import Footer from "./components/Footer";
 import IndustrySection from "./components/IndustrySection"
-// Services Page Import (Jo aapne alag file banayi hai)
 import Services from "./pages/Services"; 
 import Industries from "./pages/Industries"
 import AboutUs from "./pages/AboutUs";
+import Portfolio from "./pages/Portfolio";
+import Blogs from "./pages/Blogs"
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -49,6 +51,13 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/Industries" element={<Industries/>} />
           <Route path="/AboutUs" element={<AboutUs/>} />
+          <Route path="/Portfolio" element={<Portfolio/>} />
+          <Route path="/Blogs" element={<Blogs/>} />
+          <Route path="/Contact" element={<Contact/>} />
+
+
+
+
         </Routes>
 
         <Footer />

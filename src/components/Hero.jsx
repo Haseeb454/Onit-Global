@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "../assets/hero-tech.png";
 
 function Hero() {
@@ -17,12 +18,10 @@ function Hero() {
         </h1>
         <p className="mt-6 max-w-2xl text-base text-gray-200 sm:text-lg">
         We design and develop software tailored to your business needs — helping you scale faster, innovate smarter, and achieve lasting impact.
-
-
         </p>
-        <button className="mt-8 inline-flex items-center gap-2 rounded-md bg-pink-gradient px-11 py-4 text-sm font-semibold text-white transition hover:opacity-90">
+        <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-pink-gradient px-11 py-4 text-sm font-semibold text-white transition hover:opacity-90">
           Contact Us
-        </button>
+        </Link>
       </div>
     </section>
   );
