@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LogoCloud from "./components/LogoCloud";
@@ -5,7 +6,6 @@ import FeatureSection from "./components/FeatureSection";
 import StatsBar from "./components/StatsBar";
 import ServicesGrid from "./components/ServicesGrid";
 import ToolsShowcase from "./components/ToolsShowcase";
-import IndustrySection from "./components/IndustrySection";
 import WorkProcess from "./components/WorkProcess";
 import Testimonials from "./components/Testimonials";
 import HowChooseUs from "./components/HowChooseUs";
@@ -13,26 +13,47 @@ import ContactUs from "./components/ContactUs";
 import GlobalPresence from "./components/GlobalPresence";
 import DreamProject from "./components/DreamProject";
 import Footer from "./components/Footer";
+import IndustrySection from "./components/IndustrySection"
+// Services Page Import (Jo aapne alag file banayi hai)
+import Services from "./pages/Services"; 
+import Industries from "./pages/Industries"
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
-    <div className="bg-white">
-      <Navbar />
-      <Hero />
-      <LogoCloud />
-      <FeatureSection />
-      <StatsBar />
-      <ServicesGrid />
-      <ToolsShowcase />
-      <IndustrySection />
-      <WorkProcess />
-      <Testimonials />
-      <HowChooseUs />
-      <ContactUs />
-      <GlobalPresence />
-      <DreamProject />
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-white">
+        <Navbar />
+        
+        <Routes>
+          {/* Home Route: Isme aapka saara existing content show hoga */}
+          <Route path="/" element={
+            <>
+              <Hero />
+              <LogoCloud />
+              <FeatureSection />
+              <StatsBar />
+              <ServicesGrid />
+              <ToolsShowcase />
+              <IndustrySection />
+              <WorkProcess />
+              <Testimonials />
+              <HowChooseUs />
+              <ContactUs />
+              <GlobalPresence />
+              <DreamProject />
+            </>
+          } />
+
+          {/* Services Route: Isme aapki alag file render hogi */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/Industries" element={<Industries/>} />
+          <Route path="/AboutUs" element={<AboutUs/>} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
