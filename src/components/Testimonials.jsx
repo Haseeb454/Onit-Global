@@ -1,27 +1,8 @@
 import React from 'react';
-import bunafrImg from '../assets/bunafr.jpg'; 
-import divinityImg from '../assets/bunafr.jpg'; 
-import lockerImg from '../assets/bunafr.jpg';
-
-const projects = [
-  {
-    title: "Bunafr",
-    desc: "Bunafr is a smart home coffee roaster that enables greater supply chain efficiencies and the possibility to create an equitable society. We...",
-    image: bunafrImg 
-  },
-  {
-    title: "Divinity Metals",
-    desc: "An elegant e-commerce platform for Divinity Metals, offering a seamless shopping experience for their gold collection and various jewelry...",
-    image: divinityImg 
-  },
-  {
-    title: "Locker Room",
-    desc: "Locker Room is an app used by college athletes and fans to exchange video messages asking for shoutouts, coaching advice, or general...",
-    image: lockerImg
-  }
-];
+import { portfolioResultsData } from "../data/portfolioResults";
 
 function ProvenResults() {
+  const { header, projects, viewAllText } = portfolioResultsData;
   return (
     <section className="bg-white py-16 sm:py-24 text-center">
       <div className="container-wrap mx-auto px-4 max-w-7xl">
@@ -29,17 +10,17 @@ function ProvenResults() {
         {/* Top Badge */}
         <div className="flex justify-center">
           <p className="text-[12px] font-semibold text-[#BE185D] bg-[#FDF2F8] px-4 py-1 rounded-full border border-[#FCE7F3] inline-block uppercase tracking-wider">
-            Our Portfolio
+            {header.badgeText}
           </p>
         </div>
 
         {/* Section Heading */}
         <h2 className="mt-6 text-4xl font-extrabold text-[#0F172A] sm:text-6xl tracking-tight">
-          Proven Client <span className="text-[#BE185D] font-bold">Results</span>
+          {header.titlePrefix} <span className="text-[#BE185D] font-bold">{header.titleHighlight}</span>
         </h2>
         
         <p className="mt-6 text-gray-500 text-md font-medium max-w-2xl mx-auto">
-          We help market leaders and innovators achieve their most ambitious goals.
+          {header.description}
         </p>
 
         {/* Portfolio Grid */}
@@ -74,7 +55,7 @@ function ProvenResults() {
         {/* View All Button */}
         <div className="mt-16">
           <button className="bg-gradient-to-r from-[#BE185D] to-[#D83B61] text-white px-16 py-3 rounded-xl text-md hover:shadow-2xl hover:opacity-95 transition-all shadow-lg shadow-pink-200">
-            View All
+            {viewAllText}
           </button>
         </div>
       </div>

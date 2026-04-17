@@ -1,4 +1,5 @@
 import React from 'react';
+import { aboutSectionData } from "../data/aboutSection";
 
 const AboutSection = () => {
   const COLORS = {
@@ -11,12 +12,7 @@ const AboutSection = () => {
     counterLabel: '#4B5563',
   };
 
-  const counterData = [
-    { number: '130', label: 'Project Completed' },
-    { number: '3K+', label: 'Awesome clients' },
-    { number: '10+', label: 'Years of Experience' },
-    { number: '5', label: 'Awards Winning' },
-  ];
+  const { badgeText, image, rightParagraph, counters, description, highlightedText } = aboutSectionData;
 
   return (
     <div className="w-full bg-white font-sans py-16 px-4 md:px-10">
@@ -28,7 +24,7 @@ const AboutSection = () => {
             className="inline-block px-4 py-1.5 rounded-full text-sm font-bold tracking-wider"
             style={{ backgroundColor: COLORS.badgeBg, color: COLORS.badgeText }}
           >
-            DISCOVER THE ADVANTAGE
+            {badgeText}
           </div>
 
           <h1
@@ -36,14 +32,14 @@ const AboutSection = () => {
             style={{ color: COLORS.heading }}
           >
             We are a IT service Company working <br className="hidden md:block" /> with talents on{' '}
-            <span style={{ color: COLORS.highlight }}>delivering unique ideas</span>.
+            <span style={{ color: COLORS.highlight }}>{highlightedText}</span>.
           </h1>
 
           <p
             className="text-[19px] leading-relaxed w-full max-w-none"
             style={{ color: COLORS.paragraph }}
           >
-            Onit is a leading digital solutions company based in Pakistan, delivering innovative technology to businesses <br className="hidden md:block" /> across the globe. With over a decade of experience, we specialize in custom software, mobile apps, ERP <br className="hidden md:block" /> systems, and creative web solutions that help organizations grow and perform better.
+            {description}
           </p>
         </div>
 
@@ -54,8 +50,8 @@ const AboutSection = () => {
           <div className="w-full ">
             <div className="w-full h-full aspect-[3/4] md:aspect-auto md:h-[650px] rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://onitsol.com/images/home/pexels-fauxels-3183172.jpg" 
-                alt="Team Collaboration" 
+                src={image.src}
+                alt={image.alt}
                 className="w-full h-full object-cover   " 
               />
             </div>
@@ -68,12 +64,12 @@ const AboutSection = () => {
               className="text-[17px] leading-relaxed mb-8"
               style={{ color: COLORS.paragraph }}
             >
-              We combine creativity, strategy, and technology to craft solutions that solve real business challenges. Every project is handled collaboratively, ensuring efficiency, quality, and long-term partnerships. Our team of experts brings deep industry knowledge and a passion for innovation, allowing us to design solutions that are not only effective today but also adaptable for the future.
+              {rightParagraph}
             </p>
 
             {/* Counters Grid with Shadow & Hover Effect */}
             <div className="grid grid-cols-2 gap-6 md:gap-8">
-              {counterData.map((item, index) => (
+              {counters.map((item, index) => (
                 <div 
                   key={index} 
                   className="group relative p-8 bg-white rounded-2xl border border-gray-50 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(161,47,107,0.15)] hover:-translate-y-2 cursor-default overflow-hidden"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { teamData } from "../data/team";
 
 const TeamSection = () => {
   const COLORS = {
@@ -13,14 +14,7 @@ const TeamSection = () => {
     socialHover: '#A12F6B',
   };
 
-  const teamMembers = [
-    { name: 'Zane Sorell', role: 'CEO', img: 'https://onitsol.com/images/home/user.jpg' },
-    { name: 'Maya Mathy', role: 'Founder', img: 'https://onitsol.com/images/home/user.jpg' },
-    { name: 'Alexis Jensen', role: 'CTO', img: 'https://onitsol.com/images/home/user.jpg' },
-    { name: 'Keira Battye', role: 'Product Designer', img: 'https://onitsol.com/images/home/user.jpg' },
-    { name: 'Dominic Game', role: '3D Artist', img: 'https://onitsol.com/images/home/user.jpg' },
-    { name: 'James Vial', role: 'Head of Front-End', img: 'https://onitsol.com/images/home/user.jpg' },
-  ];
+  const { badgeText, headingPrefix, headingHighlight, headingSuffix, description, teamMembers } = teamData;
 
   return (
     <div className="w-full bg-white font-sans py-20 px-4 md:px-10 lg:px-16">
@@ -32,23 +26,22 @@ const TeamSection = () => {
             className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
             style={{ backgroundColor: COLORS.badgeBg, color: COLORS.badgeText }}
           >
-            OUR TEAM
+            {badgeText}
           </div>
 
           <h1
             className="text-[40px] md:text-[50px] font-bold leading-tight"
             style={{ color: COLORS.heading }}
           >
-            Meet Our <span style={{ color: COLORS.highlight }}>Team </span>
-            Members.
+            {headingPrefix} <span style={{ color: COLORS.highlight }}>{headingHighlight}</span>
+            {headingSuffix}
           </h1>
 
           <p
             className="text-[13px] leading-relaxed max-w-sm"
             style={{ color: COLORS.paragraph }}
           >
-            Our talented team of designers, developers, and digital experts work
-            together to create innovative solutions that drive business growth.
+            {description}
           </p>
         </div>
 

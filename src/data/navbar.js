@@ -1,0 +1,183 @@
+export const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services", hasDropdown: true },
+  { name: "Industries", path: "/Industries", hasDropdown: true },
+  { name: "About", path: "/AboutUs" },
+  { name: "Portfolio", path: "/Portfolio" },
+  { name: "Blogs", path: "/Blogs" },
+];
+
+export const services = [
+  {
+    title: "Web Development",
+    slug: "web-development",
+    path: "/services/web-development",
+    desc: "Modern and scalable",
+    iconKey: "Monitor",
+  },
+  {
+    title: "Mobile Applications",
+    slug: "mobile-applications",
+    path: "/services/mobile-applications",
+    desc: "iOS and Android apps",
+    iconKey: "Smartphone",
+  },
+  {
+    title: "Cyber Security",
+    slug: "cyber-security",
+    path: "/services/cyber-security",
+    desc: "Protecting your digital assets",
+    iconKey: "ShieldCheck",
+  },
+  {
+    title: "E-Commerce Solutions",
+    slug: "e-commerce-solutions",
+    path: "/services/e-commerce-solutions",
+    desc: "Empowering businesses to sell online",
+    iconKey: "ShoppingCart",
+  },
+  {
+    title: "Web Hosting",
+    slug: "web-hosting",
+    path: "/services/web-hosting",
+    desc: "Reliable and scalable hosting solutions",
+    iconKey: "Globe",
+  },
+  {
+    title: "SEO Services",
+    slug: "seo-services",
+    path: "/services/seo-services",
+    desc: "Boosting visibility and driving organic growth",
+    iconKey: "Search",
+  },
+  // --- New Services Added Below ---
+  {
+    title: "UI/UX Design",
+    slug: "ui-ux-design",
+    path: "/services/ui-ux-design",
+    desc: "Designs that delight users and drive results.",
+    iconKey: "Layout",
+  },
+  {
+    title: "Graphic Design",
+    slug: "graphic-design",
+    path: "/services/graphic-design",
+    desc: "Designs that inspire, engage, and connect.",
+    iconKey: "Palette",
+  },
+  {
+    title: "ERP Solutions",
+    slug: "erp-solutions",
+    path: "/services/erp-solutions",
+    desc: "Unifying business processes with smart systems.",
+    iconKey: "Briefcase",
+  },
+  {
+    title: "POS Solutions",
+    slug: "pos-solutions",
+    path: "/services/pos-solutions",
+    desc: "Simplify sales and inventory management.",
+    iconKey: "Calculator",
+  },
+  {
+    title: "IoT Solutions",
+    slug: "iot-solutions",
+    path: "/services/iot-solutions",
+    desc: "Transform your business with smart devices.",
+    iconKey: "Cpu",
+  },
+  {
+    title: "Custom Software",
+    slug: "custom-software",
+    path: "/services/custom-software",
+    desc: "Building software that fits your business perfectly.",
+    iconKey: "Code",
+  },
+];
+
+export const industries = [
+  {
+    title: "HealthCare",
+    path: "/Industries/healthcare",
+    desc: "Creating smart apps.",
+    iconKey: "HeartPulse",
+  },
+  {
+    title: "Finance & Banking",
+    path: "/Industries/finance-banking",
+    desc: "Reliable online performance.",
+    iconKey: "Landmark",
+  },
+  {
+    title: "Sports",
+    path: "/Industries/sports",
+    desc: "Optimizing business operations.",
+    iconKey: "Trophy",
+  },
+  {
+    title: "Education",
+    path: "/Industries/education",
+    desc: "Building digital experiences.",
+    iconKey: "GraduationCap",
+  },
+  {
+    title: "Renewable Energy",
+    path: "/Industries/renewable-energy",
+    desc: "Boosting online visibility.",
+    iconKey: "Zap",
+  },
+  {
+    title: "Automobiles",
+    path: "/Industries/automobiles",
+    desc: "Simplifying sales management.",
+    iconKey: "Car",
+  },
+  {
+    title: "Government & NGOs",
+    path: "/Industries/government-ngos",
+    desc: "Protecting digital assets.",
+    iconKey: "Building2",
+  },
+  {
+    title: "Logistics & Supply Chain",
+    path: "/Industries/logistics-supply-chain",
+    desc: "Intuitive user experiences.",
+    iconKey: "Truck",
+  },
+  {
+    title: "Home Appliances",
+    path: "/Industries/home-appliances",
+    desc: "Smart connected devices.",
+    iconKey: "Home",
+  },
+  {
+    title: "Tourism & Hospitality",
+    path: "/Industries/tourism-hospitality",
+    desc: "Driving online sales.",
+    iconKey: "Plane",
+  },
+  {
+    title: "Real Estate",
+    path: "/Industries/real-estate",
+    desc: "Creative visual brand solutions.",
+    iconKey: "Camera",
+  },
+  {
+    title: "Construction Materials",
+    path: "/Industries/construction-materials",
+    desc: "Tailored software solutions.",
+    iconKey: "Construction",
+  },
+  {
+    title: "Telecommunication",
+    path: "/Industries/telecommunication",
+    desc: "Driving online sales.",
+    iconKey: "Radio",
+  },
+  {
+    title: "Retail & E-commerce",
+    path: "/Industries/retail-ecommerce",
+    desc: "Creative visual brand solutions.",
+    iconKey: "Store",
+  },
+];

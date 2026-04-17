@@ -20,6 +20,9 @@ import AboutUs from "./pages/AboutUs";
 import Portfolio from "./pages/Portfolio";
 import Blogs from "./pages/Blogs"
 import Contact from "./pages/Contact";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
+// 1. Ye naya page import karo (jo hum abhi banayein ge)
+import IndustryDetailPage from "./pages/IndustryDetailPage"; 
 
 function App() {
   return (
@@ -28,7 +31,7 @@ function App() {
         <Navbar />
         
         <Routes>
-          {/* Home Route: Isme aapka saara existing content show hoga */}
+          {/* Home Route */}
           <Route path="/" element={
             <>
               <Hero />
@@ -47,16 +50,18 @@ function App() {
             </>
           } />
 
-          {/* Services Route: Isme aapki alag file render hogi */}
+          {/* Existing Routes */}
           <Route path="/services" element={<Services />} />
           <Route path="/Industries" element={<Industries/>} />
           <Route path="/AboutUs" element={<AboutUs/>} />
           <Route path="/Portfolio" element={<Portfolio/>} />
           <Route path="/Blogs" element={<Blogs/>} />
           <Route path="/Contact" element={<Contact/>} />
+          
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
 
-
-
+          {/* 2. Industry ka Dynamic Route yahan add kar dia hai */}
+          <Route path="/industries/:slug" element={<IndustryDetailPage />} />
 
         </Routes>
 

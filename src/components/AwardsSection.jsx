@@ -1,4 +1,5 @@
 import React from 'react';
+import { awardsSectionData } from "../data/awardsSection";
 
 const AwardsSection = () => {
   // Exact Color Palette based on image analysis
@@ -16,26 +17,7 @@ const AwardsSection = () => {
     accentIcon: '#BF4B7D', // Pink spiky icon
   };
 
-  const awardsData = [
-    {
-      id: 1,
-      year: '2024',
-      title: 'Innovation Ignition Award',
-      subtitle: 'Site Of The Day',
-    },
-    {
-      id: 2,
-      year: '2024',
-      title: 'CSS Design Award',
-      subtitle: 'Site Of The Day',
-    },
-    {
-      id: 3,
-      year: '2024',
-      title: 'Masterpiece Maker',
-      subtitle: 'Awards Jury 2024',
-    },
-  ];
+  const { badgeText, heading, paragraph, awards } = awardsSectionData;
 
   return (
     <div className="w-full bg-white font-sans py-20 px-4 md:px-10 lg:px-16">
@@ -48,7 +30,7 @@ const AwardsSection = () => {
             className="inline-block px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider shadow-sm"
             style={{ backgroundColor: COLORS.badgeBg, color: COLORS.badgeText }}
           >
-            OUR AWARD TIME
+            {badgeText}
           </div>
 
           {/* Heading with Highlight */}
@@ -56,9 +38,9 @@ const AwardsSection = () => {
             className="text-[48px] md:text-[40px] font-bold leading-tight"
             style={{ color: COLORS.heading }}
           >
-            Celebrating Eagle <br /> Soft's{' '}
-            <span style={{ color: COLORS.headingHighlight }}>Award-Winning</span>{' '}
-            Excellence.
+            {heading.prefix} <br />{" "}
+            <span style={{ color: COLORS.headingHighlight }}>{heading.highlight}</span>{" "}
+            {heading.suffix}
           </h1>
 
           {/* Paragraph */}
@@ -66,10 +48,7 @@ const AwardsSection = () => {
             className="text-[16px] leading-relaxed max-w-lg"
             style={{ color: COLORS.paragraph }}
           >
-            Onit has been recognized for creativity, innovation, and technical
-            excellence with multiple industry awards. These accolades reflect our
-            commitment to delivering high-quality digital solutions and driving
-            meaningful results for our clients worldwide.
+            {paragraph}
           </p>
         </div>
 
@@ -96,12 +75,12 @@ const AwardsSection = () => {
           </div>
 
           <div className="space-y-12 pt-6">
-            {awardsData.map((award, index) => (
+            {awards.map((award, index) => (
               <div
                 key={award.id}
-                className={`relative pb-10 ${index === awardsData.length - 1 ? 'pb-0' : ''}`}
+                className={`relative pb-10 ${index === awards.length - 1 ? 'pb-0' : ''}`}
                 style={{
-                  borderBottom: index === awardsData.length - 1 ? 'none' : `1px solid ${COLORS.border}`
+                  borderBottom: index === awards.length - 1 ? 'none' : `1px solid ${COLORS.border}`
                 }}
               >
                 <div className="grid grid-cols-[1fr,auto] gap-x-6 gap-y-1 items-start">

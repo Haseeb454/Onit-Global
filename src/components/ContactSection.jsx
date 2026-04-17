@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // added useState for real logic
 import { Mail } from 'lucide-react';
 
 const LinkedInIcon = () => (
@@ -22,6 +22,33 @@ const FacebookIcon = () => (
 );
 
 const ContactSection = () => {
+  // Real Form State Management
+  const [formData, setFormData] = useState({
+    fullName: '',
+    company: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Real submission logic placeholder
+    console.log("Form Submitted Successfully:", formData);
+    alert("Thank you! Your message has been sent.");
+    // Clear form after submit
+    setFormData({ fullName: '', company: '', phone: '', email: '', subject: '', message: '' });
+  };
+
   return (
     <div className="min-h-screen bg-[#1C1D1F] flex items-center justify-center p-6 md:p-20 font-sans selection:bg-pink-500 selection:text-white">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-start gap-12 lg:gap-24">
@@ -41,7 +68,6 @@ const ContactSection = () => {
           <div className="space-y-8">
             <div className="flex items-start gap-4">
               <div className="mt-1">
-                {/* Custom Phone Icon */}
                 <div className="w-5 h-8 border-2 border-[#e91e63] rounded-sm relative">
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#e91e63] rounded-full"></div>
                 </div>
@@ -87,37 +113,84 @@ const ContactSection = () => {
             Your Success Starts Here!
           </h2>
           
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm text-gray-700 font-medium">Full Name</label>
-                <input type="text" className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" />
+                <input 
+                  type="text" 
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-sm text-gray-700 font-medium">Company / Organization *</label>
-                <input type="text" required className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" />
+                <input 
+                  type="text" 
+                  name="company"
+                  required 
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Company name"
+                  className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
+                />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm text-gray-700 font-medium">Phone *</label>
-                <input type="tel" required className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  required 
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+92..."
+                  className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-sm text-gray-700 font-medium">Email *</label>
-                <input type="email" required className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" />
+                <input 
+                  type="email" 
+                  name="email"
+                  required 
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="email@example.com"
+                  className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
+                />
               </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-sm text-gray-700 font-medium">Your Subject *</label>
-              <input type="text" required className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" />
+              <input 
+                type="text" 
+                name="subject"
+                required 
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="How can we help?"
+                className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
+              />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm text-gray-700 font-medium">Message *</label>
-              <textarea rows={4} required className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors resize-none"></textarea>
+              <textarea 
+                name="message"
+                rows={4} 
+                required 
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Write your message here..."
+                className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors resize-none"
+              ></textarea>
             </div>
 
             <button type="submit" className="px-10 py-4 bg-gradient-to-r from-[#7b337d] to-[#e91e63] text-white font-bold rounded-lg hover:opacity-90 transition-opacity active:scale-95 shadow-lg">
