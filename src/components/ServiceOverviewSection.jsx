@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const variantClasses = {
   "split-full": {
     section: "bg-white py-20 w-full",
@@ -19,7 +21,13 @@ const ServiceOverviewSection = ({ overview }) => {
   const variant = variantClasses[overview.variant] ?? variantClasses.contained;
 
   return (
-    <section className={variant.section}>
+    <motion.section
+      className={variant.section}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className={variant.container}>
         <div className={variant.textWrap}>
           <h2 className="mb-6 text-[52px] font-[900] leading-[1.1] text-[#1e293b]">
@@ -62,7 +70,7 @@ const ServiceOverviewSection = ({ overview }) => {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Ye import add kiya hai
 import {
   CarFront,
   HeartPulse,
@@ -44,7 +45,7 @@ function IndustrySection() {
         {/* Industry Cards Grid */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map(({ title, iconKey, desc }) => {
-            // Hum pehle Icon component ko ek variable mein store karte hain
+      
             const IconComponent = iconMap[iconKey];
 
             return (
@@ -54,7 +55,6 @@ function IndustrySection() {
               >
                 {/* Icon Container */}
                 <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#FDF2F8] text-primary">
-                  {/* Yahan humne syntax theek kiya hai: <IconComponent /> use kiya hai */}
                   {IconComponent ? <IconComponent size={24} /> : null}
                 </div>
 
@@ -70,9 +70,12 @@ function IndustrySection() {
 
         {/* View All Button */}
         <div className="mt-12">
-          <button className="bg-primary text-white px-10 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+          <Link 
+            to="/industries" 
+            className="inline-block bg-primary text-white px-10 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+          >
             {viewAllText}
-          </button>
+          </Link>
         </div>
       </div>
     </section>

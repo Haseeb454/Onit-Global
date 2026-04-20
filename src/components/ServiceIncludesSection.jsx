@@ -39,6 +39,7 @@ import {
   Terminal,
   Calculator,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const iconMap = {
   AlertTriangle,
@@ -110,7 +111,13 @@ const ServiceIncludesSection = ({ includes }) => {
   if (!includes) return null;
 
   return (
-    <section className={variant.section}>
+    <motion.section
+      className={variant.section}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className={variant.container}>
         <div>
           <span className="mb-6 inline-block rounded-full bg-[#FDF2F4] px-4 py-1.5 text-[13px] font-semibold text-[#C1385E]">
@@ -129,7 +136,13 @@ const ServiceIncludesSection = ({ includes }) => {
 
             return (
               <div key={feature.title}>
-                <div className="flex items-start gap-6 py-8">
+                <motion.div
+                  className="flex items-start gap-6 py-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
                   <div className={variant.iconWrapClass}>
                     {Icon ? (
                       <Icon
@@ -149,7 +162,7 @@ const ServiceIncludesSection = ({ includes }) => {
                       {feature.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 {index !== includes.features.length - 1 ? (
                   <div className={variant.dividerClass} />
                 ) : null}
@@ -158,7 +171,7 @@ const ServiceIncludesSection = ({ includes }) => {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

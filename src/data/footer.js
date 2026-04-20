@@ -8,9 +8,9 @@ export const footerData = {
     email: "info@onitsol.com",
   },
   social: {
-    linkedin: "#",
-    facebook: "#",
-    website: "#",
+    linkedin: "https://www.linkedin.com/onitsol?_l=en_US",
+    facebook: "https://www.facebook.com/OnItSol/",
+    website: "https://www.onitsol.com/",
   },
   columns: [
     {

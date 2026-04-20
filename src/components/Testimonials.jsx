@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { portfolioResultsData } from "../data/portfolioResults";
 
 function ProvenResults() {
@@ -54,10 +55,13 @@ function ProvenResults() {
 
         {/* View All Button */}
         <div className="mt-16">
-          <button className="bg-gradient-to-r from-[#BE185D] to-[#D83B61] text-white px-16 py-3 rounded-xl text-md hover:shadow-2xl hover:opacity-95 transition-all shadow-lg shadow-pink-200">
-            {viewAllText}
-          </button>
+          <Link to="/portfolio">
+            <button className="bg-gradient-to-r from-[#BE185D] to-[#D83B61] text-white px-16 py-3 rounded-xl text-md hover:shadow-2xl hover:opacity-95 transition-all shadow-lg shadow-pink-200">
+              {viewAllText}
+            </button>
+          </Link>
         </div>
+
       </div>
     </section>
   );

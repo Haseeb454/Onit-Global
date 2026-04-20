@@ -12,6 +12,7 @@ import {
   ShoppingCart,
   Smartphone,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { servicesGridContent, servicesGridData } from "../data/servicesGrid";
 
 const iconMap = {
@@ -31,7 +32,13 @@ const iconMap = {
 
 function ServicesGrid() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <motion.section
+      className="bg-white py-16 sm:py-20"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="container-wrap mx-auto px-4">
         <div className="text-center">
           <p className="text-sm font-semibold text-primary bg-gray-100 rounded-full px-4 py-1 inline-block">
@@ -51,21 +58,25 @@ function ServicesGrid() {
             const Icon = iconMap[iconKey];
 
             return (
-            <article 
+            <motion.article 
               key={title} 
               className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="mb-6 inline-flex rounded-full bg-primary/10 p-3 text-primary">
                 {Icon ? <Icon size={24} /> : null}
               </div>
               <h3 className="text-lg font-bold text-deep leading-snug">{title}</h3>
               <p className="mt-3 text-[13px] leading-relaxed text-gray-500">{desc}</p>
-            </article>
+            </motion.article>
             );
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

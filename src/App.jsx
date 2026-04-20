@@ -23,10 +23,12 @@ import Contact from "./pages/Contact";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 // 1. Ye naya page import karo (jo hum abhi banayein ge)
 import IndustryDetailPage from "./pages/IndustryDetailPage"; 
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-white">
         <Navbar />
         
@@ -52,6 +54,7 @@ function App() {
 
           {/* Existing Routes */}
           <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries/>} />
           <Route path="/Industries" element={<Industries/>} />
           <Route path="/AboutUs" element={<AboutUs/>} />
           <Route path="/Portfolio" element={<Portfolio/>} />

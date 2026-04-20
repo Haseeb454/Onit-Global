@@ -72,7 +72,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Mobile", highlight: "Expertise" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "High-performance applications built with a focus on user experience and scalability.",
       features: [
         { iconKey: "Smartphone", title: "Native Development", description: "High-performance apps for both iOS and Android." },
@@ -115,7 +115,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Secure", highlight: "Assets" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Comprehensive protection for your data and digital infrastructure.",
       features: [
         { iconKey: "Shield", title: "Network Security", description: "Securing infrastructure against external and internal threats." },
@@ -158,7 +158,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Global", highlight: "Sales" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Everything you need to launch and scale a successful online business.",
       features: [
         { iconKey: "ShoppingCart", title: "Store Development", description: "Custom-designed storefronts tailored to your brand." },
@@ -182,7 +182,7 @@ export const servicesData = {
       titleLines: ["Web", "Hosting"],
       mutedLineIndex: 1,
       description: "Our hosting solutions provide the speed and 99.9% uptime your business needs to stay online and perform optimally.",
-      bulletPoints: ["Uptime Guarantee", "High Speed", "Cloud Servers", "24/7 Support"],
+      bulletPoints: ["99.9% Uptime Guarantee", "High-Speed Performance", "Scalable Hosting Plans", "24/7 Support"],
       image: { src: "https://onitsol.com/images/home/h.jpg", alt: "Hosting" },
       bulletColor: "#C1385E",
       variant: "contained",
@@ -190,24 +190,24 @@ export const servicesData = {
     faq: {
       image: { src: "https://onitsol.com/images/home/service-details2.png", alt: "FAQ" },
       items: [
-        { id: "01", question: "What is your uptime guarantee?", answer: "We offer a 99.9% uptime guarantee to ensure your site is always available." },
-        { id: "02", question: "Do you provide SSL certificates?", answer: "Yes, we include SSL certificates to secure your site and improve SEO rankings." },
-        { id: "03", question: "Can I upgrade my plan later?", answer: "Yes, our hosting is scalable. You can upgrade resources as your traffic grows." },
-        { id: "04", question: "Is technical support available?", answer: "Our expert team is available 24/7 to help with any server-related issues." },
-        { id: "05", question: "Do you offer daily backups?", answer: "Yes, our hosting plans include automated daily backups to ensure your data is always secure and recoverable." },
+        { id: "01", question: "What types of hosting do you offer?", answer: "We offer shared hosting, VPS hosting, cloud hosting, and dedicated servers based on your needs." },
+        { id: "02", question: "How reliable is your hosting service?", answer: "We guarantee 99.9% uptime, ensuring your websites and applications are always available." },
+        { id: "03", question: "Do you provide domain registration?", answer: "Yes, we offer domain registration and management services alongside hosting." },
+        { id: "04", question: "Can I scale my hosting plan as my business grows?", answer: "Absolutely, our hosting solutions are designed to scale with your business requirements." },
+        { id: "05", question: "Is technical support available?", answer: "Yes, we provide 24/7 customer support to assist with any hosting issues." },
         { id: "06", question: "Can I transfer my existing website to your hosting?", answer: "Yes, we provide free site migration services to seamlessly move your website to our servers with zero downtime." }
       ],
       variant: "contained",
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Reliable", highlight: "Uptime" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Performance-driven hosting solutions for businesses of all sizes.",
       features: [
-        { iconKey: "Server", title: "Cloud Hosting", description: "Fast and reliable hosting with high availability." },
-        { iconKey: "ShieldCheck", title: "Secure Servers", description: "Advanced protection with firewalls and DDoS defense." },
-        { iconKey: "Zap", title: "Speed Boost", description: "SSD storage and caching for lightning-fast loading." },
-        { iconKey: "RefreshCw", title: "Auto Backups", description: "Regular backups to ensure your data is always safe." }
+        { iconKey: "Server", title: "Shared Hosting", description: "Affordable and reliable hosting for small businesses and startups." },
+        { iconKey: "ShieldCheck", title: "VPS Hosting", description: "Powerful and scalable virtual servers for growing businesses." },
+        { iconKey: "Zap", title: "Cloud Hosting", description: "Flexible cloud hosting with high availability and scalability." },
+        { iconKey: "RefreshCw", title: "Secure Hosting", description: "Advanced protection with SSL, firewalls, and DDoS defense." }
       ],
       iconColor: "#C1385E",
       variant: "spacious",
@@ -244,7 +244,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Search", highlight: "Visibility" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Comprehensive strategies to dominate search engine results.",
       features: [
         { iconKey: "Search", title: "Keyword Strategy", description: "Identifying high-value terms that drive conversions." },
@@ -259,31 +259,31 @@ export const servicesData = {
 
   "ui-ux-design": {
     slug: "ui-ux-design",
-    hero: { breadcrumbLabel: "UI/UX Design", title: "UI/UX Design", subtitle: "Crafting intuitive digital experiences." },
+    hero: { breadcrumbLabel: "UI/UX Design", title: "UI/UX Design", subtitle: "Designs that delight users and drive results." },
     overview: {
       titleLines: ["UI/UX", "Design"],
       mutedLineIndex: 1,
       description: "We create intuitive interfaces and engaging user experiences focused on understanding user needs and building seamless journeys.",
-      bulletPoints: ["User Research", "Wireframing", "UI Design", "Prototyping"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "UI/UX" },
+      bulletPoints: ["User-Centered Design", "Wireframing & Prototyping", "Visual Identity & Branding", "Interactive Prototypes"],
+      image: { src: "https://onitsol.com/images/home/u.jpg", alt: "UI/UX" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
     faq: {
       image: { src: "https://onitsol.com/images/home/service-details2.png", alt: "FAQ" },
       items: [
-        { id: "01", question: "What is your design process?", answer: "We follow a path of Research, Wireframing, UI Design, and User Testing." },
-        { id: "02", question: "Is the design mobile-first?", answer: "Yes, we prioritize mobile-first design to ensure compatibility across all devices." },
-        { id: "03", question: "Do you provide design systems?", answer: "Yes, we create comprehensive style guides and design systems for consistency." },
-        { id: "04", question: "Can you fix an existing app's UX?", answer: "Absolutely, we perform UX audits and redesign interfaces for better usability." },
-        { id: "05", question: "What tools do you use for designing?", answer: "We primarily use industry-standard tools like Figma, Adobe XD, and Sketch for designing and prototyping." },
+        { id: "01", question: " What is UI/UX design?", answer: "UI (User Interface) design focuses on visual elements, while UX (User Experience) design ensures usability and smooth interactions. Together, they create engaging digital products." },
+        { id: "02", question: "Why is UI/UX design important?", answer: "Good UI/UX design improves customer satisfaction, increases conversions, and enhances brand perception." },
+        { id: "03", question: "Do you provide prototypes before development?", answer: "Yes, we create interactive prototypes to validate ideas and gather user feedback before moving into development." },
+        { id: "04", question: "Can you redesign an existing app or website?", answer: "Absolutely, we specialize in revamping existing platforms with modern UI/UX practices to improve usability and aesthetics." },
+        { id: "05", question: "Which tools do you use for UI/UX design?", answer: "We use tools like Figma, Adobe XD, and Sketch to design and prototype user-friendly digital products." },
         { id: "06", question: "Do you conduct user testing?", answer: "Yes, we can organize user testing sessions to gather real feedback and refine the interface before development." }
       ],
       variant: "plain",
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Human", highlight: "Centric" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Designs that bridge the gap between complex tech and human interaction.",
       features: [
         { iconKey: "Layout", title: "Interface Design", description: "Clean, modern layouts tailored to your brand identity." },
@@ -304,7 +304,7 @@ export const servicesData = {
       mutedLineIndex: 1,
       description: "Communicate your brand message through stunning visuals that capture attention and leave a lasting impression.",
       bulletPoints: ["Logo Design", "Branding", "Print Media", "Social Media Kits"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "Graphic" },
+      image: { src: "https://onitsol.com/images/home/g.jpg", alt: "Graphic" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
@@ -343,7 +343,7 @@ export const servicesData = {
       mutedLineIndex: 1,
       description: "Streamline your entire organization with a custom ERP platform that integrates all your business processes.",
       bulletPoints: ["Automation", "Reporting", "Inventory", "HR/Payroll"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "ERP" },
+      image: { src: "https://onitsol.com/images/home/e.jpg", alt: "ERP" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
@@ -361,7 +361,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Business", highlight: "Flow" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Centralize your operations into a single, high-performance ecosystem.",
       features: [
         { iconKey: "TrendingUp", title: "Finance Sync", description: "Automated accounting and real-time expense tracking." },
@@ -382,7 +382,7 @@ export const servicesData = {
       mutedLineIndex: 1,
       description: "Manage retail or hospitality sales with integrated payments, fast checkout, and inventory synchronization.",
       bulletPoints: ["Checkout", "Inventory", "Sales Reports", "Multi-branch"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "POS" },
+      image: { src: "https://onitsol.com/images/home/p.jpg", alt: "POS" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
@@ -400,7 +400,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Retail", highlight: "Tech" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Faster service for your customers and better control for you.",
       features: [
         { iconKey: "CreditCard", title: "Quick Checkout", description: "Support for multiple payment modes and fast invoicing." },
@@ -421,7 +421,7 @@ export const servicesData = {
       mutedLineIndex: 1,
       description: "Harness the power of sensors and connected devices to automate environments and gather data insights.",
       bulletPoints: ["Smart Sensors", "Automation", "Remote Monitoring", "IoT Dashboards"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "IoT" },
+      image: { src: "https://onitsol.com/images/home/iot.jpg", alt: "IoT" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
@@ -439,7 +439,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Smart", highlight: "Control" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Automate manual tasks using intelligent hardware and smart triggers.",
       features: [
         { iconKey: "Cpu", title: "Device Integration", description: "Syncing hardware with powerful cloud software." },
@@ -460,7 +460,7 @@ export const servicesData = {
       mutedLineIndex: 1,
       description: "When generic software isn't enough, we build tailored solutions designed specifically for your unique goals.",
       bulletPoints: ["Bespoke Logic", "Legacy Migration", "API Dev", "Scalability"],
-      image: { src: "https://onitsol.com/images/home/servicedetail1.png", alt: "Custom Software" },
+      image: { src: "https://onitsol.com/images/home/cus.jpg", alt: "Custom Software" },
       bulletColor: "#792f6c",
       variant: "split-full",
     },
@@ -478,7 +478,7 @@ export const servicesData = {
     },
     includes: {
       badge: "Service Features",
-      title: { prefix: "Tailored", highlight: "Build" },
+      title: { prefix: "Our Service", highlight: "Includes" },
       description: "Software that adapts to your business, not the other way around.",
       features: [
         { iconKey: "Code", title: "Bespoke Code", description: "Written from scratch for maximum efficiency." },
@@ -488,8 +488,11 @@ export const servicesData = {
       ],
       iconColor: "#C03565",
       variant: "compact",
+      
     },
+    
   },
+  
 };
 
 export const serviceSlugs = Object.keys(servicesData);

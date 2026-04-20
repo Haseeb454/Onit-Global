@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 // Aapki akathi (single) image ka import
 import missionImage from '../assets/Group.png'; 
 
@@ -19,17 +20,18 @@ const ContactUs = () => {
               Our mission is to look after the best interests of your business.
             </h2>
             
-            <button className="bg-gradient-to-r from-[#BE185D] to-[#8E24AA] text-white px-7 py-3 rounded-full font-bold text-md hover:shadow-lg transition-all transform hover:-translate-y-1">
-              Book a Service
-            </button>
+            <Link to="/contact">
+              <button className="bg-gradient-to-r from-[#BE185D] to-[#8E24AA] text-white px-7 py-3 rounded-full font-bold text-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                Book a Service
+              </button>
+            </Link>
           </div>
 
-          {/* Right Side: Image Container - iski height bhi 400px hai */}
+          {/* Right Side: Image Container */}
           <div className="relative hidden lg:block h-full">
             <img 
               src={missionImage} 
               alt="Our Mission" 
-              /* object-cover se image stretch nahi hogi balkay fit hogi */
               className="w-full h-full object-cover object-right"
             />
           </div>

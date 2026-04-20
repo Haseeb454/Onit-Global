@@ -1,5 +1,6 @@
-import React, { useState } from 'react'; // added useState for real logic
-import { Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Loader2 } from 'lucide-react'; // Loader icon for professional feel
+import emailjs from '@emailjs/browser';
 
 const LinkedInIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -22,7 +23,7 @@ const FacebookIcon = () => (
 );
 
 const ContactSection = () => {
-  // Real Form State Management
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     company: '',
@@ -34,19 +35,41 @@ const ContactSection = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Real submission logic placeholder
-    console.log("Form Submitted Successfully:", formData);
-    alert("Thank you! Your message has been sent.");
-    // Clear form after submit
-    setFormData({ fullName: '', company: '', phone: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    // --- PASTE YOUR IDS HERE ---
+    const SERVICE_ID = "service_1538qrl"; 
+    const TEMPLATE_ID = "template_d74yv3j";
+    const PUBLIC_KEY = "NOGhpsp1FeXa7bjL9";
+    // ---------------------------
+
+    const templateParams = {
+      from_name: formData.fullName,
+      company: formData.company,
+      phone: formData.phone,
+      reply_to: formData.email, // Client's email for easy reply
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Success! Your message has been sent to Onit Global.");
+        setFormData({ fullName: '', company: '', phone: '', email: '', subject: '', message: '' });
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        alert("Oops! Something went wrong. Please check your connection.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -55,7 +78,7 @@ const ContactSection = () => {
         
         {/* Left Content */}
         <div className="w-full md:w-1/2 pt-8">
-          <span className="text-[#e91e63] font-bold text-xs tracking-widest uppercase">
+          <span className="text-[#e91e63] font-bold text-xs tracking-widest uppercase italic">
             *Drop us a line*
           </span>
           <h1 className="text-white text-5xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">
@@ -94,21 +117,15 @@ const ContactSection = () => {
               Social Just You Connected Us!
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <LinkedInIcon />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <InstagramIcon />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <FacebookIcon />
-              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors"><LinkedInIcon /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors"><InstagramIcon /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors"><FacebookIcon /></a>
             </div>
           </div>
         </div>
 
         {/* Right Form Card */}
-        <div className="w-full md:w-1/2 bg-[#fdf8ff] rounded-xl p-8 md:p-12 shadow-2xl relative bottom-40">
+        <div className="w-full md:w-1/2 bg-[#fdf8ff] rounded-xl p-8 md:p-12 shadow-2xl relative lg:-bottom-20 z-10">
           <h2 className="text-[#0f0f0f] text-2xl font-bold mb-8">
             Your Success Starts Here!
           </h2>
@@ -122,6 +139,7 @@ const ContactSection = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
+                  required
                   placeholder="Enter your name"
                   className="w-full p-4 bg-white border border-gray-200 rounded-md outline-none focus:border-[#e91e63] transition-colors" 
                 />
@@ -193,8 +211,19 @@ const ContactSection = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="px-10 py-4 bg-gradient-to-r from-[#7b337d] to-[#e91e63] text-white font-bold rounded-lg hover:opacity-90 transition-opacity active:scale-95 shadow-lg">
-              Submit Now
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#7b337d] to-[#e91e63] text-white font-bold rounded-lg hover:opacity-90 transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="animate-spin" size={20} />
+                  Sending...
+                </>
+              ) : (
+                'Submit Now'
+              )}
             </button>
           </form>
         </div>

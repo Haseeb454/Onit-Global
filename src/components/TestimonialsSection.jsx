@@ -27,7 +27,6 @@ const Rating = ({ stars }) => {
 
 // Testimonial Card Component
 const TestimonialCard = ({ quote, name, avatar, rating }) => (
-  /* p-10 aur min-h-80 use kiya hai height barhane ke liye */
   <div className="bg-white p-14 shadow-md rounded-[20px] border border-gray-100 flex flex-col justify-between min-h-[320px]">
     <blockquote className="text-gray-600 text-base leading-relaxed mb-12">
       {quote}

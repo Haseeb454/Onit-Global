@@ -1,10 +1,17 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import heroImage from "../assets/hero-tech.png";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-deep">
+    <motion.section
+      className="relative overflow-hidden bg-deep"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="absolute inset-0">
         <img src={heroImage} alt="Tech background" className="h-full w-full object-cover opacity-100" />
         <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/50 to-deep/60" />
@@ -23,7 +30,7 @@ function Hero() {
           Contact Us
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
