@@ -19,6 +19,7 @@ import Industries from "./pages/Industries"
 import AboutUs from "./pages/AboutUs";
 import Portfolio from "./pages/Portfolio";
 import Blogs from "./pages/Blogs"
+import BlogDetailPage from "./pages/BlogDetailPage";
 import Contact from "./pages/Contact";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 // 1. Ye naya page import karo (jo hum abhi banayein ge)
@@ -65,6 +66,8 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs/>} />
           <Route path="/Portfolio" element={<Portfolio/>} />
           <Route path="/Blogs" element={<Blogs/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/blogs/:slug" element={<BlogDetailPage />} />
           <Route path="/Contact" element={<Contact/>} />
           
           <Route path="/services/:slug" element={<ServiceDetailPage />} />

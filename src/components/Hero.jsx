@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-tech.png";
+// Typing animation import ki gayi hai
+import { TypeAnimation } from 'react-type-animation';
 
 function Hero() {
   return (
@@ -18,10 +20,23 @@ function Hero() {
       </div>
 
       <div className="container-wrap relative py-20 sm:py-24 lg:py-30">
-        <p className="mb-4 text-sm text-white bg-black-200 px-4 py-2 rounded-md">Innovate. Scale. Succeed</p>
+        <p className="mb-4 text-sm text-white bg-[#242726] px-4 py-2 rounded-full w-fit">Innovate. Scale. Succeed</p>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
           Crafting Digital <br /> Products That  <br /> Drive
-           <span className="text-pink-500"> Growth</span>
+          
+          <span className="text-pink-500">
+            <TypeAnimation
+              sequence={[
+                ' Growth', // Pehle ye type hoga
+                2000,      // 2 seconds wait karega
+                '',        // Phir delete hoga
+                1000,      // 1 second gap
+              ]}
+              wrapper="span"
+              speed={50}   // Typing ki speed
+              repeat={Infinity} // Bar bar chalta rahega
+            />
+          </span>
         </h1>
         <p className="mt-6 max-w-2xl text-base text-gray-200 sm:text-lg">
         We design and develop software tailored to your business needs — helping you scale faster, innovate smarter, and achieve lasting impact.
