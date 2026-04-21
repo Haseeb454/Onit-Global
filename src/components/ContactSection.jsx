@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Loader2 } from 'lucide-react'; // Loader icon for professional feel
-import emailjs from '@emailjs/browser';
+import { Mail, Loader2 } from 'lucide-react';
+import { Toaster, toast } from 'react-hot-toast';
 
 const LinkedInIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -38,42 +38,62 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // --- PASTE YOUR IDS HERE ---
-    const SERVICE_ID = "service_1538qrl"; 
-    const TEMPLATE_ID = "template_d74yv3j";
-    const PUBLIC_KEY = "NOGhpsp1FeXa7bjL9";
-    // ---------------------------
-
-    const templateParams = {
-      from_name: formData.fullName,
-      company: formData.company,
-      phone: formData.phone,
-      reply_to: formData.email, // Client's email for easy reply
-      subject: formData.subject,
-      message: formData.message,
-    };
-
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert("Success! Your message has been sent to Onit Global.");
-        setFormData({ fullName: '', company: '', phone: '', email: '', subject: '', message: '' });
-      })
-      .catch((err) => {
-        console.error('FAILED...', err);
-        alert("Oops! Something went wrong. Please check your connection.");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      const response = await fetch('https://smtp.eagale.xyz/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          message: `Subject: ${formData.subject}\nCompany: ${formData.company}\nPhone: ${formData.phone}\n\nMessage: ${formData.message}`
+        }),
       });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Success! Your message has been sent to Onit Global.", {
+          duration: 4000,
+          style: {
+            background: '#333',
+            color: '#fff',
+          },
+        });
+        setFormData({ fullName: '', company: '', phone: '', email: '', subject: '', message: '' });
+      } else {
+        toast.error("Error: " + data.message, {
+          duration: 4000,
+          style: {
+            background: '#333',
+            color: '#fff',
+          },
+        });
+      }
+    } catch (err) {
+      console.error('FAILED...', err);
+      toast.error("Server is not running. Please start your backend server.", {
+        duration: 4000,
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-[#1C1D1F] flex items-center justify-center p-6 md:p-20 font-sans selection:bg-pink-500 selection:text-white">
+      {/* Toaster Component yahan add kiya hai taake animations work karein */}
+      <Toaster position="top-right" reverseOrder={false} />
+
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-start gap-12 lg:gap-24">
         
         {/* Left Content */}
@@ -227,7 +247,6 @@ const ContactSection = () => {
             </button>
           </form>
         </div>
-
       </div>
     </div>
   );

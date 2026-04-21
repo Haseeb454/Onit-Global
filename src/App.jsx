@@ -25,11 +25,17 @@ import ServiceDetailPage from "./pages/ServiceDetailPage";
 import IndustryDetailPage from "./pages/IndustryDetailPage"; 
 import ScrollToTop from "./components/ScrollToTop";
 
+// React Hot Toast Import kiya gaya hai
+import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="bg-white">
+        {/* Global Toaster add kiya hai taake har page par notification chal sakay */}
+        <Toaster position="top-right" reverseOrder={false} />
+        
         <Navbar />
         
         <Routes>
@@ -63,7 +69,6 @@ function App() {
           
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
 
-          {/* 2. Industry ka Dynamic Route yahan add kar dia hai */}
           <Route path="/industries/:slug" element={<IndustryDetailPage />} />
 
         </Routes>
